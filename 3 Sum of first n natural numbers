@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b{0};
+    cout << "Enter a natural number : ";
+    cin >> a;
+    for(int i=1; i<=a; i++)
+    {
+        b = b + i;
+    }
+    cout << "The sum of first " << a << " Natural numbers is : ";
+    for(int i=1; i<a; i++)
+    {
+        cout << i << " + ";
+    }
+    cout << a << " : ";
+    cout << b << endl;
+    return 0;
+}
