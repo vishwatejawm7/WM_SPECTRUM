@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,sum{0},rem, temp, k;
+    cout << "Enter a range \n";
+    cout << "Enter the first number : " ;
+    cin >> a;
+    cout << "Enter the second number : " ;
+    cin >> b;
+    for(int i=a; i<=b; i++)
+    {
+        temp = i;
+        k = i;
+        sum = 0;
+        while(temp!=0)
+        {
+            rem = temp%10;
+            sum = sum + rem * rem * rem;
+            temp = temp/10;
+        }
+        if(k == sum)
+        {
+            cout << i << " ";
+        }
+    }
+    return 0;
+}
