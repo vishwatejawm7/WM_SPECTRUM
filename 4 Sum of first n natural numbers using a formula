@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter a natural number : ";
+    cin >> n;
+    cout << "The sum of " << n << " Natural numbers is : ";
+    for(int i=1; i<n; i++)
+    {
+        cout << i << " + ";
+    }
+    cout << n << " : ";
+    cout << n*(n+1)/2;
+    return 0;
+}
