@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,next,a{0},b{1};
+    cout << "Enter the Nth term of the fibonacci series : ";
+    cin >> n;
+    for(int i=0; i<n-1; i++)
+    {
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    cout << next;
+    return 0;
+}
