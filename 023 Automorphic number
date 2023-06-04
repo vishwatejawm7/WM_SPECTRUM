@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, temp{0}, prod{1}, sq{0}, at{0}, count{0};
+    cout << "Enter a number  : " ;
+    cin >> a;
+    temp = a;
+    while(temp != 0)
+    {
+        temp /= 10;
+        prod *= 10;
+        count++;
+    }
+    sq = a * a;
+    at = sq % prod;
+    if(at == a)
+    {
+        cout << a << " Square : " << sq << endl;
+        cout << "last " << count << " digits : " << at << endl;
+        cout << "Since " << a << " = " << at << endl;
+        cout << a << " is automorphic" << endl;
+    }
+    else
+    {
+        cout << a << " Square : " << sq << endl;
+        cout << "last " << count << " digits : " << at << endl;
+        cout << "Since " << a << " != " << at << endl;
+        cout << a << " is not automorphic" << endl;
+    }
+    return 0;
+}
