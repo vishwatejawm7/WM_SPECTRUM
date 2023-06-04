@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,rem,temp,sum{0};
+    cout << "Enter a number to check if harshad : ";
+    cin >> a;
+    temp = a;
+    while(temp!=0)
+    {
+        rem = temp%10;
+        sum = sum + rem;
+        temp /=10;
+    }
+    if(a%sum == 0)
+    {
+        cout << a << " is harshad" << endl;
+    }
+    else
+    {
+        cout << a << " is not harshad" << endl;
+    }
+    return 0;
+}
