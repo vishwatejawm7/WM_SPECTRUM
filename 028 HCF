@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,hold;
+    cout << "Program to find the HCF of two numbers " << endl;
+    cout << "Enter the first number : ";
+    cin >> a;
+    cout << "Enter the second number : ";
+    cin >> b;
+    for(int i=1; i<a || i<b; i++)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            hold = i;
+        }
+    }
+    cout << "The HCF of " << a << " & " << b << " is " << hold << endl;
+    return 0;
+}
