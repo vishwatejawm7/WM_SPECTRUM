@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,d1,d2,x1,x2;
+    cout << "Program to check friendly pair" << endl;
+    cout << "Enter the first number : ";
+    cin >> a;
+    cout << "Enter the second number : ";
+    cin >> b;
+    for(int i=1; i<a; i++)
+    {
+        if(a%i == 0)
+        {
+            d1=d1+i;
+        }
+    }
+    x1 = d1/a;
+    for(int i=1; i<b; i++)
+    {
+        if(b%i == 0)
+        {
+            d2=d2+i;
+        }
+    }
+    x2 = d2/b;
+    if(x1 == x2)
+    {
+        cout << a << " & " << b << " are friendly pair" << endl;
+    }
+    else
+    {
+        cout << a << " & " << b << " are not friendly pair" << endl;
+    }
+    return 0;
+}
