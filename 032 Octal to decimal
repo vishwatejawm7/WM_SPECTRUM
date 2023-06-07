@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,rem,sum,prod;
+    int b = 1;
+    cout << "Program to convert a octal number to decimal" << endl;
+    cout << "Enter a octal number : ";
+    cin >> a;
+    int k = a;
+    while(a!=0)
+    {
+        rem = a%10;
+        prod = rem * b;
+        sum = sum + prod; 
+        a = a/10;
+        b = b * 8;
+    }
+    cout << "octal number " << k << " converted to decimal : " << sum << endl;
+    return 0;
+}
