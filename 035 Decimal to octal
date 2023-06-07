@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,arr[100];
+    cout << "Enter a decimal number to convert to octal : ";
+    cin >> a;
+    int b=a;
+    int i = 0;
+    while(a != 0)
+    {
+        arr[i] = a % 8;
+        a /= 8;
+        i++;
+    }
+    cout << "The decimal number " << b << " converted to octal : " ;
+    for(int j=i-1; j>=0; j--)
+    {
+        cout << arr[j];
+    }
+    return 0;
+}
