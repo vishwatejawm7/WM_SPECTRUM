@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   string hexNumber;
+   cout << "Enter a hexadecimal number to convert it to decimal : " ;
+   cin >> hexNumber;
+   int base = 16;
+   cout << stoi(hexNumber,0,base);
+}
