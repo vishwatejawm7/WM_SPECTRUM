@@ -1,0 +1,110 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout << "X - axis : ";
+    cin >> a;
+    cout << "Y - axis : ";
+    cin >> b;
+    if(a > 0 && b > 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |   First Quadrant" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a < 0 && b > 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "   Second Quadrant       |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a < 0 && b < 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "   Third Quadrant        |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a > 0 && b < 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |   Foutrh Quadrant" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a == 0 && b == 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |Origin" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a != 0 && b == 0)
+    {
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------ X - axis" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    else if(a == 0 && b != 0)
+    {
+    cout << "                       Y - axis" << endl;   
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "------------------------------------------------------" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    cout << "                         |" << endl;
+    }
+    return 0;
+}
