@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n, r, prod{1}, prod1{1}, res{0};
+    cout << "Enter the number of people : ";
+    cin >> n;
+    cout << "Enter the number of seats : ";
+    cin >> r;
+    for(int i=1; i<=n; i++)
+    {
+        prod *= i;
+    }
+    r = n - r;
+    for(int i=1; i<=r; i++)
+    {
+        prod1 *= i;
+    }
+    res = prod / prod1;
+    cout << "The number of ways employees can be arranged in the seats available in a company are : " << res << endl;
+    return 0;
+}
