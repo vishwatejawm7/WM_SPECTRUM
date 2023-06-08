@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, rem{0}, sum{0}, prod{0}, rem3{0}, sum3{0}, rem4{0}, sum4{0};
+    cout << "Enter a binary number to convert it to octal : ";
+    cin >> a;
+    int i = 1;
+    int b = a;
+    while(b!= 0)
+    {
+        rem = b % 10;
+        prod = rem * i;
+        sum += prod;
+        i *= 2;
+        b /= 10;
+    }
+    while(sum != 0)
+    {
+        rem3 = sum % 8;
+        sum3 = sum3 * 10 + rem3;
+        sum /= 8;
+    }
+    while(sum3 != 0)
+    {
+        rem4 = sum3 % 10;
+        sum4 = sum4 * 10 + rem4;
+        sum3 /= 10; 
+    }
+    cout << "The binary number " << a << " converted to octal : " << sum4;
+    return 0;
+}
