@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,rem;
+    char arr[100];
+    int i = 0;
+    cout << "Enter a number to convert the decimal number to hexadecimal : ";
+    cin >> a;
+    while(a!=0)
+    {
+        rem = a % 16;
+        if(rem < 10)
+        {
+            arr[i] = rem + 48;
+        }
+        else
+        {
+            arr[i] = rem + 55;
+        }
+        a /= 16;
+        i++;
+    }
+    for(int j=i-1; j>=0; j--)
+    {
+        cout << arr[j];
+    }
+    return 0;
+}
