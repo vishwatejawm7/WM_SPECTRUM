@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,c,d;
+    cout << "Enter the numerator of first number : ";
+    cin >> a;
+    cout << "Enter the denominator of first number : ";
+    cin >> b;
+    cout << "Enter the numerator of second number : ";
+    cin >> c;
+    cout << "Enter the denominator of second number : ";
+    cin >> d;
+    int rem{0}, rem1{0};
+    int k = (a * d) + (b * c);
+    int l = b * d;
+    for(int i=1; i<k || i<l; i++)
+    {
+        if(k%i==0 && l%i==0)
+        {
+            rem = k / i;
+            rem1 = l / i;
+        }
+    }
+    cout << rem << " / " << rem1;
+    return 0;
+}
