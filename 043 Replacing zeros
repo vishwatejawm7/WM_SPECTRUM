@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,rem{0}, sum{0}, rem1{0}, sum1{0};
+    cout << "Enter a number : ";
+    cin >> a;
+    int b = a;
+    while(b != 0)
+    {
+        rem = b % 10;
+        sum = sum * 10 + rem;
+        b /= 10;
+    }
+    int c = sum;
+    while(c != 0)
+    {
+        rem1 = c % 10;
+        if(rem1 == 0)
+        {
+            rem1 = 1;
+        }
+        sum1 = sum1 * 10 + rem1;
+        c /= 10;
+    }
+    cout << "The number with zeros replace with ones is : " << sum1;
+    return 0;
+}
