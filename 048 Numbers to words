@@ -1,0 +1,43 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int a;
+    string b[] = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+    "Nineteen", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    cout << "Enter a number : ";
+    cin >> a;
+    if(a >= 100000)
+    {
+        int last = a / 100000;
+        cout << b[last] << " Lakh ";
+        a -= last * 100000;
+    }
+    if(a > 20000)
+    {
+        int last = a / 10000;
+        cout << b[18 + last] << " ";
+        a -= last * 10000;
+    }
+    if(a >= 1000)
+    {
+        int last = a / 1000;
+        cout << b[last] << " Thousand ";
+        a -= last * 1000;
+    }
+    if(a >= 100)
+    {
+        int last = a / 100;
+        cout << b[last] << " Hundred ";
+        a -= last * 100;
+    }
+    if(a > 20)
+    {
+        int last = a / 10;
+        cout << b[18 + last] << " ";
+        a -= last * 10;
+    }
+    cout << b[a];
+    return 0;
+}
