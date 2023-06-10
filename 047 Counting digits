@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a;
+    int count{0};
+    cout << "Enter a number : ";
+    cin >> a;
+    while(a != 0)
+    {
+        a /= 10;
+        count += 1;
+    }
+    cout << "The number of digits are : " << count;
+    return 0;
+}
