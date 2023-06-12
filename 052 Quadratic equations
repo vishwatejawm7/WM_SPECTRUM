@@ -1,0 +1,37 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int a,b,c;
+    cout << "Enter x^2 term : ";
+    cin >> a;
+    cout << "Enter x^1 term : ";
+    cin >> b;
+    cout << "Enter x^0 term : ";
+    cin >> c;
+    cout << "Expression : " << a << "x^2 + " << b << "x^1 + " << c << " = 0" << endl;
+    int d = (b * b) - (4 * a * c);
+    double sqval = sqrt(d);
+    if(d > 0)
+    {
+        cout << "Roots are real and different\n";
+        double r1 = static_cast<double>(-b + sqval) / (2 * a);
+        double r2 = static_cast<double>(-b - sqval) / (2 * a);
+        cout << "Root 1 : " << r1 << "Root 2 : " << r2 << endl;
+    }
+    else if(d == 0)
+    {
+        cout << "Roots are real and equal\n";
+        double r3 = static_cast<double>(-b + sqval) / (2 * a);
+        cout << "Roots : " << r3 << endl;
+    }
+    else if(d < 0)
+    {
+        cout << "Roots are real and imaginary\n";
+        double real = static_cast<double>(-b) / (2 * a);
+        double imag = static_cast<double>(-d) / (2 * a);
+        cout << "Real : " << real << "\nImaginary : " << imag << endl;
+    }
+    return 0;
+}
