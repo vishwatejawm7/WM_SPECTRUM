@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a;
+    int arr[100];
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " of the array : ";
+        cin >> arr[i];
+    }
+    int max = arr[0];
+    for(int i=1; i<a; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    cout << "Largest element of the array is : " << max << endl;
+    return 0;
+}
