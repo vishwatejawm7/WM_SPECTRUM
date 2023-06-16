@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a, arr1[100];
+    cout << "Enter the size of the array 1 : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr1[i];
+    }
+    int b, arr2[100];
+    cout << "Enter the size of the array 2 : ";
+    cin >> b;
+    for(int i=0; i<b; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr2[i];
+    }
+    int temp{0};
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<a; j++)
+        {
+            if(arr1[i] < arr1[j])
+            {
+                temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
+    for(int i=0; i<b; i++)
+    {
+        for(int j=0; j<b; j++)
+        {
+            if(arr2[i] > arr2[j])
+            {
+                temp = arr2[i];
+                arr2[i] = arr2[j];
+                arr2[j] = temp;
+            }
+        }
+    }
+    int product = 0;
+    cout << "\nMinimum scalar product : ";
+    for(int i=0; i<a; i++)
+    {
+        cout << "(" << arr1[i] << " * " << arr2[i] <<") + ";
+        product += arr1[i] * arr2[i];
+    }
+    cout << " = " << product;
+}
