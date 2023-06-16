@@ -1,0 +1,110 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    char a;
+    int k{0}, m{0}, sum{0}, temp{0};
+    vector<int> g{};
+    do
+    {
+        cout << "\nP - Print numbers" << endl;
+        cout << "A - Add a number to the list" << endl;
+        cout << "M - Display mean of the numbers" << endl;
+        cout << "S - Display the smallest number" << endl;
+        cout << "L - Display the largest number" << endl;
+        cout << "Q - Quit" << endl;
+        cout << "\nEnter your choice : ";
+        cin >> a;
+        switch(a)
+        {
+            case 'P' :
+            case 'p' :
+                m = g.size();
+                if(m > 0)
+                {
+                    for(auto i : g)
+                    {
+                        cout << i << " ";
+                    }
+                    cout << endl;
+                }
+                else
+                {
+                    cout << "\nList is empty" << endl;
+                }
+                break;
+            case 'A' :
+            case 'a' :
+                cout << "\nEnter a number : ";
+                cin >> k;
+                g.push_back(k);
+                cout << k << " added" << endl;
+                break;
+            case 'M' :
+            case 'm' :
+                m = g.size();
+                sum = 0;
+                if(m > 0)
+                {
+                    cout << "\nMean : ";
+                    for(auto i : g)
+                    {
+                        sum += i;
+                    }
+                    cout << sum/m << endl;
+                }
+                else
+                {
+                    cout << "Unable to calculate mean - no data" << endl;
+                }
+                break;
+            case 'S' : 
+            case 's' :
+                m = g.size();
+                if(m > 0)
+                {
+                    temp = g.at(0);
+                    for(int i=0; i<m; i++)
+                    {
+                        if(g.at(i) < temp)
+                        {
+                            temp = g.at(i);
+                        }
+                    }
+                cout << "\nSmallest : " << temp << endl;
+                }
+                else
+                {
+                    cout << "\nUnabel to determine the smallest number - list is empty" << endl;
+                }
+                break;
+            case 'L' : 
+            case 'l' :
+                m = g.size();
+                if(m > 0)
+                {
+                    temp = g.at(0);
+                    for(int i=0; i<m; i++)
+                    {
+                        if(g.at(i) < temp)
+                        {
+                            temp = g.at(i);
+                        }
+                    }
+                cout << "\nLargest : " << temp << endl;
+                }
+                else
+                {
+                    cout << "\nUnabel to determine the largest number - list is empty" << endl;
+                }
+                break;
+            case 'Q' :
+            case 'q' :
+                cout << "Bye Bye";
+                break;
+            default : cout << "\nInvalid input - Choose from the given menu" << endl;
+        }
+    }while(a != 'Q' && a != 'q');
+    return 0;
+}
