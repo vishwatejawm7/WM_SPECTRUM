@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,arr[100],a1[100],c[100],temp{0},arr1[100];
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr[i];
+    }
+    for(int i=0; i<a; i++)
+    {
+        c[i] = 0;
+    if(a1[i] != 1){
+        for(int j=0; j<a; j++)
+        {
+            if(i != j)
+            {
+                if(arr[i] == arr[j])
+                {
+                    c[i] += 1;
+                    a1[j] = 1;
+                }
+            }
+        }
+        arr1[i] = arr[i];
+      }
+      else{
+      arr1[i] = 0;
+      }
+      }
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<a; j++)
+        {
+            if(c[i] > c[j])
+            {
+                temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
+    cout << "Output : ";
+    for(int i=0; i<a; i++)
+    {
+        if(arr1[i] != 0)
+        {
+            cout << arr1[i] << " ";
+        }
+    }
+    return 0;
+}
