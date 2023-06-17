@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,arr[100];
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr[i];
+    }
+    int count{0};
+    for(int i=0; i<a; i++)
+    {
+        while(arr[i]%2==0)
+        {
+            arr[i] /= 2;
+        }
+        while(arr[i]%3==0)
+        {
+            arr[i] /= 3;
+        }
+        if(arr[i] == arr[0])
+        {
+            count += 1;
+        }
+    }
+    if(count == a)
+    {
+        cout << "Yes all the elements can be made equal multiplying with 2 & 3";
+    }
+    else
+    {
+        cout << "No, all the elements cannot be made equal multiplying with 2 & 3";
+    }
+    return 0;
+}
