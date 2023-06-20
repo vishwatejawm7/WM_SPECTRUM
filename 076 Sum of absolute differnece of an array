@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,arr[100];
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr[i];
+    }
+    int result = arr[0];
+    for(int i=0; i<a; i++)
+    {
+        if(arr[i] > result)
+        {
+            result = arr[i];
+        }
+    }
+    cout << "Largest : " << result << endl;
+    int sum;
+    for(int i=0; i<a; i++)
+    {
+        int sum1 = 0;
+        for(int j=0; j<a; j++)
+        {
+            sum = arr[i] - arr[j];
+            if(sum < 0)
+            {
+                sum1 += -sum;
+            }
+            else
+            {
+                sum1 += sum;
+            }
+        }
+        cout << "Sum of element " << i << " : " << sum1 << endl; 
+        if(sum1 < result)
+        {
+            result = sum1;
+        }
+    }
+    cout << "The sum of absolute difference is : " << result;
+    return 0;
+}
