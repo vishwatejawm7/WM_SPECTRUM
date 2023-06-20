@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, b, arr1[100], arr2[100];
+    cout << "Enter the size of first array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr1[i];
+    }
+    cout << "Enter the size of second array : ";
+    cin >> b;
+    for(int i=0; i<b; i++)
+    {
+        cout << "Enter the element " << i << " : ";
+        cin >> arr2[i];
+    }
+    int in[100], g[100];
+    int k{0}, s{0};
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<b; j++)
+        {
+            if(arr1[i] == arr2[j])
+            {
+                cout << arr1[i] << " ";
+                in[j] = 1;
+            }
+        }
+    }
+    for(int i=0; i<b; i++)
+    {
+        if(in[i] != 1)
+        {
+            g[s] = arr2[i];
+            s++;
+        }
+    }
+    for(int i=0; i<s; i++)
+    {
+        for(int j=0; j<s; j++)
+        {
+            if(g[i] < g[j])
+            {
+                k = g[i];
+                g[i] = g[j];
+                g[j] = k;
+            }
+        }
+    }
+    for(int i=0; i<s; i++)
+    {
+        cout << g[i] << " ";
+    }
+    return 0;
+}
