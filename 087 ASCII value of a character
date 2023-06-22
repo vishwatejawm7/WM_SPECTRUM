@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    char a;
+    int b;
+    cout << "Enter a character : ";
+    cin >> a;
+    b = a;
+    cout << "The ASCII value of \"" << a << "\" is " << b;
+}
