@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str;
+    cout << "Enter the string : ";
+    getline(cin, str);
+    int l = str.length();
+    cout << "String after removing characters except alphabets : ";
+    for(int i=0; i<l; i++)
+    {
+        if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] == ' '))
+        {
+            cout << str[i];
+        }
+    }
+    return 0;
+}
