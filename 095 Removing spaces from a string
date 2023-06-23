@@ -1,0 +1,18 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str;
+    cout << "enter a string : ";
+    getline(cin,str);
+    int l = str.length();
+    cout << "String with no spaces : ";
+    for(int i=0; i<l; i++)
+    {
+        if(str[i] != ' ')
+        {
+            cout << str[i];
+        } 
+    }
+}
