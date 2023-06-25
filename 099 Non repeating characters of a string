@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    string s;
+    cout << "Enter a string : ";
+    getline(cin,s);
+    int l = sizeof(s);
+    
+    for(int i=0; s[i]!='\0'; i++)
+    {
+        int count = 0;
+        for(int j=0; j<l; j++)
+        {
+            if(i != j)
+            {
+                if(s[i] == s[j])
+                {
+                    count += 1;
+                }
+            }
+        }
+        if(count == 0)
+        {
+            cout << s[i] << " ";
+        }
+    }
+}
