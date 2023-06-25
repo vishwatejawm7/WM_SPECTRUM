@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    string str;
+    cout << "Enter a mathemetical expression : ";
+    getline(cin,str);
+    int l = sizeof(str);
+    cout << "After removing brackets : ";
+    for(int i=0; i<l; i++)
+    {
+        if(str[i] != '{' && str[i] != '}' && str[i] != '[' && str[i] != ']' && str[i] != '(' && str[i] != ')')
+        {
+            cout << str[i];
+        }
+    }
+    return 0;
+}
