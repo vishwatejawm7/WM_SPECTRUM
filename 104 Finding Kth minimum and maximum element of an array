@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, arr[100], temp{0}, b;
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    for(auto i=0; i<a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr[i];
+    }
+    for(auto i=0; i<a; i++)
+    {
+        for(auto j=0; j<a; j++)
+        {
+            if(arr[i] < arr[j])
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    cout << "Enter the kth smallest element starting from 0 : ";
+    cin >> b;
+    cout << "\nMinimum number at " << b << " is " << arr[b];
+    cout << "\nMaximum number " << arr[a-1] << endl;
+    return 0;
+}
