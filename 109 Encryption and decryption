@@ -1,0 +1,28 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key{"ZXCVBNMLKJHGFDSAQWERTYUIOPzxcvbnmlkjhgfdsaqwertyuiop"};
+    string a;
+    cout << "Enter a string to encode : ";
+    getline(cin,a);
+    string n{};
+    for(char i : a)
+    {
+        size_t k = alphabet.find(i);
+        if( k != string::npos)
+        {
+            char b {key.at(k)}; 
+            n += b;
+        }
+        else
+        {
+            n += i;
+        }
+    }
+    cout << "Encrypted data : " << n << endl;
+    cout << "Decrypted data : " << a << endl;
+    return 0;
+}
