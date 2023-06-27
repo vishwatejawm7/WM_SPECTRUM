@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, b, arr1[100], arr2[100], temp[100], f{0}, t{0};
+    cout << "Enter the size of array 1 : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr1[i];
+        temp[f] = arr1[i];
+        f++;
+    }
+    cout << "Enter the size of array 2 : ";
+    cin >> b;
+    for(int i=0; i<b; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr2[i];
+        temp[f] = arr2[i];
+        f++;
+    }
+    for(int i=0; i<a+b; i++)
+    {
+        for(int j=0; j<a+b; j++)
+        {
+            if(temp[i] < temp[j])
+            {
+                t = temp[i];
+                temp[i] = temp[j];
+                temp[j] = t;
+            }
+        }
+    }
+    cout << "\nArr 1 : ";
+    for(int i=0; i<a+b; i++)
+    {
+        cout << temp[i] << " ";
+        if(i == a-1)
+        {
+            cout << "\nArr 2 : ";
+        }
+    }
+    return 0;
+}
