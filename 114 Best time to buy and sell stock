@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, arr[100], k{0}, m{0};
+    cout << "Best time to buy and sell stock \nEnter the number of days : ";
+    cin >> a;
+    cout << "Enter the price on each day : \n";
+    for(int i=1; i<=a; i++)
+    {
+        cout << "Day " << i << " : ";
+        cin >> arr[i];
+    }
+    int min = arr[0];
+    for(int i=1; i<=a; i++)
+    {
+        if(arr[i] < min)
+        {
+            min = arr[i];
+            k = i;
+        }
+    }
+    int max = arr[k];
+    for(int i=k; i<=a; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+            m = i;
+        }
+    }
+    if(max-min > 0)
+    {
+        cout << "Best time to buy stock : day " << k << endl;
+        cout << "Best time to sell stock : day " << m << endl;
+        cout << "Total profit : " << max - min;
+    }
+    else
+    {
+        cout << "Can't get any profit" << endl;
+    }
+    return 0;
+}
