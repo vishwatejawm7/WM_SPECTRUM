@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, arr[100], max{-10000}, now{0};
+    cout << "Kadane's Algorithm \nEnter the size of the array : ";
+    cin >> a;
+    for(int i=1; i<=a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr[i];
+    }
+    for(int i=1; i<=a; i++)
+    {
+        now += arr[i];
+        if(now > max)
+        {
+            max = now;
+        }
+        if(now < 0)
+        {
+            now = 0;
+        }
+    }
+    cout << "\nMaximum sum of sub-array : " << max << endl;
+    return 0;
+}
