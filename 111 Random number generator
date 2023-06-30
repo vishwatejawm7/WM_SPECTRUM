@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+    int random_number{}, count{}, min{}, max{};
+    cout << "Random number generator\nEnter the minimum range : ";
+    cin >> min;
+    cout << "Enter the maximum range : ";
+    cin >> max;
+    cout << "Enter the numbers to be generated : ";
+    cin >> count;
+    cout << "\n" << count << " random numbers genereted from " << min << " to " << max << " are : ";
+    srand(time(nullptr));
+    for(int i{1}; i<=count; i++)
+    {
+        random_number = rand() % max + min;
+        cout << random_number << " ";
+    }
+    return 0;
+}
