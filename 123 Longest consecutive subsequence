@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, arr[100], temp{0}, k{155}, count{0};
+    cout << "Finding longest consecutive subsequence\nEnter the size of the array : ";
+    cin >> a;
+    for(int i=0; i<a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr[i]; 
+    }
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<a; j++)
+        {
+            if(arr[i] < arr[j])
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    cout << "\nAscending order : ";
+    for(int i=0; i<a; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    k = arr[0];
+    for(int i=1; i<a; i++)
+    {
+        if(arr[i] == k+1)
+        {
+            count++;
+        }
+        k = arr[i];
+    }
+    cout << endl;
+    cout << "\nLongest consecutive subsequence : " << count << endl;
+    return 0;
+}
