@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a, arr[100], g, k;
+    cout << "Three way partitioning of an array\nFirst numbers less than \"g\"\nSecond numbers between \"g\" and \"k\" \nThird numbers greater than \"k\"\n \nEnter the size of the array : ";
+    cin >> a;
+    cout << "Enter the elements in the array\n";
+    for(int i=1; i<=a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr[i];
+    }
+    cout << "Enter g : ";
+    cin >> g;
+    cout << "Enter k : ";
+    cin >> k;
+    cout << "Three way partitioning : ";
+    for(int i=1; i<=a; i++)
+    {
+        if(arr[i] < g)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << " - ";
+    for(int i=1; i<=a; i++)
+    {
+        if(arr[i] >= g && arr[i] <= k)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << " - ";
+    for(int i=1; i<=a; i++)
+    {
+        if(arr[i] > k)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}
