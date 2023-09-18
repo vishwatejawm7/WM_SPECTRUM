@@ -1,0 +1,65 @@
+// Median in a row wise sorted matrix
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, arr[100][100], arr1[100], k{1}, temp{0};
+    cout << "Enter the row and column size of the matrix : ";
+    cin >> a;
+    cout << "Enter the elements in the matrix\n";
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            cout << "[" << i << "][" << j << "] : ";
+            cin >> arr[i][j];
+            arr1[k] = arr[i][j];
+            k++;
+        }
+    }
+    k -= 1;
+    cout << "\nGiven matrix\n";
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << "\nMatrix converted to 1D array\n";
+    for(int i=1; i<=k; i++)
+    {
+        cout << arr1[i] << " ";
+    }
+    cout << "\nSorted array\n";
+    for(int i=1; i<=k; i++)
+    {
+        for(int j=1; j<=k; j++)
+        {
+            if(arr1[i] < arr1[j])
+            {
+                temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
+    for(int i=1; i<=k; i++)
+    {
+        cout << arr1[i] << " ";
+    }
+    if(k%2 == 0)
+    {
+        k /= 2;
+    }
+    else
+    {
+        k /= 2;
+        k++;
+    }
+    cout << "\nMedian of the given matrix is " << arr1[k];
+    return 0;
+}
