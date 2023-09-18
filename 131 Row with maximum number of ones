@@ -1,0 +1,47 @@
+// Row with maximum number of 1s in C++
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, arr[100][100], ones{0}, countOnes[100], k{0};
+    cout << "Enter the size of the array : ";
+    cin >> a;
+    cout << "Enter the elements in the array\n";
+    for(int i=0; i<a; i++)
+    {
+        ones = 0;
+        for(int j=0; j<a; j++)
+        {
+            cout << "[" << i << "][" << j << "] : ";
+            cin >> arr[i][j];
+            if(arr[i][j] == 1)
+            {
+                ones++;
+            }
+        }
+        countOnes[i] = ones;
+    }
+    int max = countOnes[0];
+    for(int i=0; i<a; i++)
+    {
+        if(countOnes[i] > max)
+        {
+            max = countOnes[i];
+            k = i;
+        }
+    }
+    cout << "\nMatrix\n";
+    for(int i=0; i<a; i++)
+    {
+        cout << "Row " << i << " -> ";
+        for(int j=0; j<a; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << "\nRow " << k << " contains maximum number of 1s";
+    return 0;
+}
