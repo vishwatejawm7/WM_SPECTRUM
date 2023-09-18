@@ -1,4 +1,3 @@
-// Median in a row wise sorted matrix
 #include <iostream>
 
 using namespace std;
