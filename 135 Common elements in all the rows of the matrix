@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, arr[100][100];
+    cout << "Common elements in all the rows of the matrix\nEnter the size of the matrix : ";
+    cin >> a;
+    cout << "Enter the elements in the matrix\n";
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<a; j++)
+        {
+            cout << "[" << i << "][" << j << "] : ";
+            cin >> arr[i][j];
+        }
+    }
+    cout << "\nMatrix\n";
+    for(int i=0; i<a; i++)
+    {
+        for(int j=0; j<a; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    int count{0};
+    cout << "\nElements common in all the rows : ";
+    for(int i=0; i<a; i++)
+    {
+        count = 0;
+        for(int j=0; j<a; j++)
+        {
+            for(int k=0; k<a; k++)
+            {
+                if(arr[0][i] == arr[j][k])
+                {
+                    count++;
+                }
+            }
+        }
+        if(count >= a)
+        {
+            cout << arr[0][i] << " ";
+        }
+    }
+    cout << endl;
+    
+    return 0;
+}
