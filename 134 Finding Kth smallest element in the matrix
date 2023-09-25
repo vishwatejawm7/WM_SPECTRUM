@@ -1,0 +1,56 @@
+// Finding Kth smallest element in the matrix
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, arr[100][100], join[100], temp{0}, k{1}, l;
+    cout << "Enter the size of the matrix : ";
+    cin >> a;
+    cout << "Enter the elements in the matrix\n";
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            cout << "[" << i << "][" << j << "] : ";
+            cin >> arr[i][j];
+            join[k] = arr[i][j];
+            k += 1;
+        }
+    }
+    cout << "\nMatrix\n";
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << "Enter the value of k : ";
+    cin >> l;
+    for(int i=1; i<k; i++)
+    {
+        for(int j=1; j<k; j++)
+        {
+            if(join[i] < join[j])
+            {
+                temp = join[i];
+                join[i] = join[j];
+                join[j] = temp;
+            }
+        }
+    }
+    cout << "\nMatrix after re-arranging\n";
+    for(int i=1; i<k; i++)
+    {
+        cout << join[i] << " ";
+        if(i % a == 0)
+        {
+            cout << endl;
+        }
+    }
+    cout << "\n" << l << "th smallest element in the matrix : " << join[l];
+    return 0;
+}
