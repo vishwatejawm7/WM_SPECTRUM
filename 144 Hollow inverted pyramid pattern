@@ -1,0 +1,37 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    cout << "Hollow inverted pyramid pattern\nEnter the number of rows : ";
+    cin >> a;
+    for(int i=a; i>0; i--)
+    {
+        for(int k=a; k>i; k--)
+        {
+            cout << " ";
+        }
+        for(int j=0; j<i*2 - 1; j++)
+        {
+            if(i <= a - 1)
+            {
+                if(j == 0 || j== i*2 - 2)
+                {
+                    cout << "*";
+                }
+                else
+                {
+                    cout << " ";
+                }
+            }
+            else
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
