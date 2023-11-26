@@ -1,0 +1,77 @@
+//Check if two arrays are same or not
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, b, arr1[100], arr2[100], count{0};
+    cout << "Enter the size of the first array : ";
+    cin >> a;
+    cout << "Enter the elements in the array\n";
+    for(int i=1; i<=a; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr1[i];
+    }
+    cout << "\nEnter the size of the second array : ";
+    cin >> b;
+    cout << "Enter the elements in the array\n";
+    for(int i=1; i<=b; i++)
+    {
+        cout << "[" << i << "] : ";
+        cin >> arr2[i];
+    }
+    int temp{0};
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            if(arr1[i] < arr1[j])
+            {
+                temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
+    cout << "\nArrays after sorting\nFirst array\n";
+    for(int i=1; i<=a; i++)
+    {
+        cout << arr1[i] << " ";
+    }
+    for(int i=1; i<=b; i++)
+    {
+        for(int j=1; j<=b; j++)
+        {
+            if(arr2[i] < arr2[j])
+            {
+                temp = arr2[i];
+                arr2[i] = arr2[j];
+                arr2[j] = temp;
+            }
+        }
+    }
+    cout << "\nSecond array" << endl;
+    for(int i=1; i<=b; i++)
+    {
+        cout << arr2[i] << " ";
+    }
+    cout <<  endl;
+    for(int i=1; i<=a || i<=b; i++)
+    {
+        if(arr1[i] == arr2[i])
+        {
+            count++;
+        }
+    }
+    if(count == a && count == b)
+    {
+        cout << "\nBoth the arrays are same";
+    }
+    else
+    {
+        cout << "\nBoth the arrays are not same";
+    }
+    return 0;
+}
